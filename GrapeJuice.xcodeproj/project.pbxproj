@@ -10,8 +10,8 @@
 		12A5E173185F6E5E008D8471 /* simple.html in Resources */ = {isa = PBXBuildFile; fileRef = 12A5E172185F6E5E008D8471 /* simple.html */; };
 		12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E175185F73D5008D8471 /* UIViewController+GrapeJuice.m */; };
 		12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E178185F7948008D8471 /* GrapeJuiceViewController.m */; };
-		12A5E17D185F80DE008D8471 /* GPDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17C185F80DE008D8471 /* GPDivView.m */; };
-		12A5E180185F80EF008D8471 /* GPSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GPSpanView.m */; };
+		12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17C185F80DE008D8471 /* GJDivView.m */; };
+		12A5E180185F80EF008D8471 /* GJSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GJSpanView.m */; };
 		1558AE54185F6A21001BB976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE53185F6A21001BB976 /* Foundation.framework */; };
 		1558AE56185F6A21001BB976 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE55185F6A21001BB976 /* CoreGraphics.framework */; };
 		1558AE58185F6A21001BB976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE57185F6A21001BB976 /* UIKit.framework */; };
@@ -43,10 +43,10 @@
 		12A5E175185F73D5008D8471 /* UIViewController+GrapeJuice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GrapeJuice.m"; sourceTree = "<group>"; };
 		12A5E177185F7948008D8471 /* GrapeJuiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GrapeJuiceViewController.h; sourceTree = "<group>"; };
 		12A5E178185F7948008D8471 /* GrapeJuiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrapeJuiceViewController.m; sourceTree = "<group>"; };
-		12A5E17B185F80DE008D8471 /* GPDivView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDivView.h; sourceTree = "<group>"; };
-		12A5E17C185F80DE008D8471 /* GPDivView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDivView.m; sourceTree = "<group>"; };
-		12A5E17E185F80EF008D8471 /* GPSpanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPSpanView.h; sourceTree = "<group>"; };
-		12A5E17F185F80EF008D8471 /* GPSpanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPSpanView.m; sourceTree = "<group>"; };
+		12A5E17B185F80DE008D8471 /* GJDivView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJDivView.h; sourceTree = "<group>"; };
+		12A5E17C185F80DE008D8471 /* GJDivView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJDivView.m; sourceTree = "<group>"; };
+		12A5E17E185F80EF008D8471 /* GJSpanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJSpanView.h; sourceTree = "<group>"; };
+		12A5E17F185F80EF008D8471 /* GJSpanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJSpanView.m; sourceTree = "<group>"; };
 		1558AE50185F6A21001BB976 /* GrapeJuice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeJuice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1558AE53185F6A21001BB976 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1558AE55185F6A21001BB976 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,10 +103,10 @@
 		12A5E17A185F80B1008D8471 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				12A5E17B185F80DE008D8471 /* GPDivView.h */,
-				12A5E17C185F80DE008D8471 /* GPDivView.m */,
-				12A5E17E185F80EF008D8471 /* GPSpanView.h */,
-				12A5E17F185F80EF008D8471 /* GPSpanView.m */,
+				12A5E17B185F80DE008D8471 /* GJDivView.h */,
+				12A5E17C185F80DE008D8471 /* GJDivView.m */,
+				12A5E17E185F80EF008D8471 /* GJSpanView.h */,
+				12A5E17F185F80EF008D8471 /* GJSpanView.m */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -321,10 +321,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
-				12A5E180185F80EF008D8471 /* GPSpanView.m in Sources */,
+				12A5E180185F80EF008D8471 /* GJSpanView.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */,
-				12A5E17D185F80DE008D8471 /* GPDivView.m in Sources */,
+				12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */,
 				1558AE60185F6A21001BB976 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

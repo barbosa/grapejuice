@@ -12,8 +12,8 @@
 #import <ObjectiveGumbo/ObjectiveGumbo.h>
 
 // grapejuice
-#import "GPDivView.h"
-#import "GPSpanView.h"
+#import "GJDivView.h"
+#import "GJSpanView.h"
 
 @implementation UIViewController( GrapeJuice )
 
@@ -57,8 +57,8 @@
     if( !classesMap )
     {
         classesMap = @{
-            @(GUMBO_TAG_DIV): [GPDivView class],
-            @(GUMBO_TAG_SPAN): [GPSpanView class]
+            @(GUMBO_TAG_DIV): [GJDivView class],
+            @(GUMBO_TAG_SPAN): [GJSpanView class]
         };
     }
     

@@ -1,5 +1,5 @@
 //
-//  GPSpanView.h
+//  GJDivView.h
 //  GrapeJuice
 //
 //  Created by Daniel Alves on 16/12/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GPSpanView : UIView
+@interface GJDivView : UIView
 
 @end
