@@ -26,6 +26,13 @@
 		1558AE6F185F6A21001BB976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE57185F6A21001BB976 /* UIKit.framework */; };
 		1558AE77185F6A21001BB976 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE75185F6A21001BB976 /* InfoPlist.strings */; };
 		1558AE79185F6A21001BB976 /* GrapeJuiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AE78185F6A21001BB976 /* GrapeJuiceTests.m */; };
+		1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AE89185F8F25001BB976 /* ESCssParser.m */; };
+		1558AEBE185F8F25001BB976 /* ESCssTokenizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AE8A185F8F25001BB976 /* ESCssTokenizer.m */; };
+		1558AEBF185F8F25001BB976 /* ESCssTokens.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AE8C185F8F25001BB976 /* ESCssTokens.m */; };
+		1558AEC0185F8F25001BB976 /* build.command in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE8E185F8F25001BB976 /* build.command */; };
+		1558AEC3185F8F25001BB976 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE91185F8F25001BB976 /* LICENSE */; };
+		1558AEC4185F8F25001BB976 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE92185F8F25001BB976 /* README.md */; };
+		1558AEE5185F8F61001BB976 /* simple.css in Resources */ = {isa = PBXBuildFile; fileRef = 1558AEE4185F8F61001BB976 /* simple.css */; };
 		C29067C50F1A497380A5E6E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE8F12AA274E11AFE6D645 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +76,18 @@
 		1558AE74185F6A21001BB976 /* GrapeJuiceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GrapeJuiceTests-Info.plist"; sourceTree = "<group>"; };
 		1558AE76185F6A21001BB976 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1558AE78185F6A21001BB976 /* GrapeJuiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapeJuiceTests.m; sourceTree = "<group>"; };
+		1558AE88185F8F25001BB976 /* ESCssParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCssParser.h; sourceTree = "<group>"; };
+		1558AE89185F8F25001BB976 /* ESCssParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCssParser.m; sourceTree = "<group>"; };
+		1558AE8A185F8F25001BB976 /* ESCssTokenizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCssTokenizer.m; sourceTree = "<group>"; };
+		1558AE8B185F8F25001BB976 /* ESCssTokens.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESCssTokens.h; sourceTree = "<group>"; };
+		1558AE8C185F8F25001BB976 /* ESCssTokens.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESCssTokens.m; sourceTree = "<group>"; };
+		1558AE8E185F8F25001BB976 /* build.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = build.command; sourceTree = "<group>"; };
+		1558AE8F185F8F25001BB976 /* css.l */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.lex; path = css.l; sourceTree = "<group>"; };
+		1558AE90185F8F25001BB976 /* css.y */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.yacc; path = css.y; sourceTree = "<group>"; };
+		1558AE91185F8F25001BB976 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1558AE92185F8F25001BB976 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1558AE93185F8F25001BB976 /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
+		1558AEE4185F8F61001BB976 /* simple.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = simple.css; sourceTree = "<group>"; };
 		4AAE8F12AA274E11AFE6D645 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BF6969A8B148BEBA74EAC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				12A5E172185F6E5E008D8471 /* simple.html */,
+				1558AEE4185F8F61001BB976 /* simple.css */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -125,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1558AE59185F6A21001BB976 /* GrapeJuice */,
+				1558AE85185F8F25001BB976 /* ESCssParser */,
 				1558AE72185F6A21001BB976 /* GrapeJuiceTests */,
 				1558AE52185F6A21001BB976 /* Frameworks */,
 				1558AE51185F6A21001BB976 /* Products */,
@@ -199,6 +220,48 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		1558AE85185F8F25001BB976 /* ESCssParser */ = {
+			isa = PBXGroup;
+			children = (
+				1558AE86185F8F25001BB976 /* ESCssParser */,
+				1558AE91185F8F25001BB976 /* LICENSE */,
+				1558AE92185F8F25001BB976 /* README.md */,
+				1558AE93185F8F25001BB976 /* test.css */,
+			);
+			path = ESCssParser;
+			sourceTree = "<group>";
+		};
+		1558AE86185F8F25001BB976 /* ESCssParser */ = {
+			isa = PBXGroup;
+			children = (
+				1558AE87185F8F25001BB976 /* Parser */,
+				1558AE8D185F8F25001BB976 /* Syntax */,
+			);
+			path = ESCssParser;
+			sourceTree = "<group>";
+		};
+		1558AE87185F8F25001BB976 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				1558AE88185F8F25001BB976 /* ESCssParser.h */,
+				1558AE89185F8F25001BB976 /* ESCssParser.m */,
+				1558AE8A185F8F25001BB976 /* ESCssTokenizer.m */,
+				1558AE8B185F8F25001BB976 /* ESCssTokens.h */,
+				1558AE8C185F8F25001BB976 /* ESCssTokens.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		1558AE8D185F8F25001BB976 /* Syntax */ = {
+			isa = PBXGroup;
+			children = (
+				1558AE8E185F8F25001BB976 /* build.command */,
+				1558AE8F185F8F25001BB976 /* css.l */,
+				1558AE90185F8F25001BB976 /* css.y */,
+			);
+			path = Syntax;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,6 +322,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 1558AE47185F6A21001BB976;
 			productRefGroup = 1558AE51185F6A21001BB976 /* Products */;
@@ -276,9 +340,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1558AEE5185F8F61001BB976 /* simple.css in Resources */,
+				1558AEC4185F8F25001BB976 /* README.md in Resources */,
 				1558AE5E185F6A21001BB976 /* InfoPlist.strings in Resources */,
 				1558AE66185F6A21001BB976 /* Images.xcassets in Resources */,
+				1558AEC0185F8F25001BB976 /* build.command in Resources */,
 				12A5E173185F6E5E008D8471 /* simple.html in Resources */,
+				1558AEC3185F8F25001BB976 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,12 +400,16 @@
 			files = (
 				12A5E183185F8E97008D8471 /* GJTextView.m in Sources */,
 				12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */,
+				1558AEBF185F8F25001BB976 /* ESCssTokens.m in Sources */,
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
 				12A5E180185F80EF008D8471 /* GJSpanView.m in Sources */,
+				12A5E180185F80EF008D8471 /* GPSpanView.m in Sources */,
+				1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */,
 				12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */,
 				1558AE60185F6A21001BB976 /* main.m in Sources */,
+				1558AEBE185F8F25001BB976 /* ESCssTokenizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
