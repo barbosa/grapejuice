@@ -1,0 +1,3 @@
+[submodule "ESCssParser"]
+	path = ESCssParser
+	url = git@github.com:tracy-e/ESCssParser.git
