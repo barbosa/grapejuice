@@ -26,8 +26,7 @@
     if( bodyElements.count <= 0 )
         return;
     
-    UIWindow* window = [UIApplication sharedApplication].windows[0];
-    self.view = [[UIView alloc] initWithFrame: CGRectMake( 0, 0, window.frame.size.width, window.frame.size.height )];
+    self.view = [[UIViewController grapeJuiceClassesMap][@(GUMBO_TAG_BODY)] new];
     
     OGElement* body = bodyElements[0];
     

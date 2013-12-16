@@ -10,4 +10,26 @@
 
 @implementation GJBodyView
 
+-( void )willMoveToWindow:( UIWindow* )newWindow
+{
+    CGRect myFrame = self.frame;
+    myFrame.size = newWindow.frame.size;
+    self.frame = myFrame;
+    
+    [super layoutSubviews];
+}
+
+-( void )layoutSubviews
+{
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    if( !window )
+        return;
+    
+    CGRect myFrame = self.frame;
+    myFrame.size = window.frame.size;
+    self.frame = myFrame;
+    
+    [super layoutSubviews];
+}
+
 @end

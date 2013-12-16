@@ -10,20 +10,6 @@
 
 @implementation GJDivView
 
--( void )willMoveToSuperview:( UIView* )newSuperview
-{
-    [super willMoveToSuperview: newSuperview];
-
-    if( !newSuperview )
-    {
-        CGRect myFrame = self.frame;
-        myFrame.origin = CGPointZero;
-        myFrame.size.height = 0.0f;
-        myFrame.size.width = newSuperview.frame.size.width;
-        self.frame = myFrame;
-    }
-}
-
 -( void )layoutSubviews
 {
     CGFloat yCounter = 0.0f;
@@ -40,6 +26,7 @@
     
     CGRect myFrame = self.frame;
     myFrame.size.height = yCounter;
+    myFrame.size.width = self.superview.frame.size.width;
     self.frame = myFrame;
 }
 
