@@ -8,7 +8,12 @@
 
 #import "UIViewController+GrapeJuice.h"
 
+// objective gumbo
 #import <ObjectiveGumbo/ObjectiveGumbo.h>
+
+// grapejuice
+#import "GPDivView.h"
+#import "GPSpanView.h"
 
 @implementation UIViewController( GrapeJuice )
 
@@ -24,17 +29,92 @@
     
     OGElement* body = bodyElements[0];
     
-    for (OGElement* element in body.children) {
+    [self loadViewFromElement: body withParent: self.view];
+}
+
+-( void )loadViewFromElement:( OGElement* )element withParent:( UIView* )parent
+{
+    for (OGElement* child in element.children) {
         
-        if (![element isKindOfClass: [OGText class]])
+        if (![child isKindOfClass: [OGText class]])
         {
-            UIView* grapejuiceView = [[UIView alloc] initWithFrame: CGRectMake( 5, 5, window.frame.size.width - 10, window.frame.size.height - 10 )];
-            grapejuiceView.backgroundColor = [UIColor grayColor];
-            [self.view addSubview: grapejuiceView];
-            grapejuiceView.layer.borderColor = [UIColor redColor].CGColor;
-            grapejuiceView.layer.borderWidth = 1.0f;
+            Class mappedClass = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
+            
+            NSLog( @"class is %@", mappedClass );
+            
+            UIView* mappedView = [[mappedClass alloc] init];
+            [parent addSubview: mappedView];
+            
+            [self loadViewFromElement: child withParent: mappedView];
         }
     }
 }
 
++( NSDictionary* )grapeJuiceClassesMap
+{
+    static NSDictionary* classesMap = nil;
+  
+    if( !classesMap )
+    {
+        classesMap = @{
+            @(GUMBO_TAG_DIV): [GPDivView class],
+            @(GUMBO_TAG_SPAN): [GPSpanView class]
+        };
+    }
+    
+    return classesMap;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
