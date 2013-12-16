@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12A5E173185F6E5E008D8471 /* simple.html in Resources */ = {isa = PBXBuildFile; fileRef = 12A5E172185F6E5E008D8471 /* simple.html */; };
+		12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E175185F73D5008D8471 /* UIViewController+GrapeJuice.m */; };
 		1558AE54185F6A21001BB976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE53185F6A21001BB976 /* Foundation.framework */; };
 		1558AE56185F6A21001BB976 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE55185F6A21001BB976 /* CoreGraphics.framework */; };
 		1558AE58185F6A21001BB976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE57185F6A21001BB976 /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		12A5E172185F6E5E008D8471 /* simple.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = simple.html; sourceTree = "<group>"; };
+		12A5E174185F73D5008D8471 /* UIViewController+GrapeJuice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GrapeJuice.h"; sourceTree = "<group>"; };
+		12A5E175185F73D5008D8471 /* UIViewController+GrapeJuice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GrapeJuice.m"; sourceTree = "<group>"; };
 		1558AE50185F6A21001BB976 /* GrapeJuice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeJuice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1558AE53185F6A21001BB976 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1558AE55185F6A21001BB976 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,8 +134,8 @@
 				1558AE65185F6A21001BB976 /* Images.xcassets */,
 				12A5E171185F6E5E008D8471 /* resources */,
 				1558AE5A185F6A21001BB976 /* Supporting Files */,
-				1558AE82185F6F6E001BB976 /* GrapeJuiceViewController.h */,
-				1558AE83185F6F6E001BB976 /* GrapeJuiceViewController.m */,
+				12A5E174185F73D5008D8471 /* UIViewController+GrapeJuice.h */,
+				12A5E175185F73D5008D8471 /* UIViewController+GrapeJuice.m */,
 			);
 			path = GrapeJuice;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				1558AE84185F6F6E001BB976 /* GrapeJuiceViewController.m in Sources */,
 				1558AE60185F6A21001BB976 /* main.m in Sources */,
