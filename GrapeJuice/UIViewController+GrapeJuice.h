@@ -10,6 +10,6 @@
 
 @interface UIViewController( GrapeJuice )
 
--( void )loadViewsFromHTML:( NSString* )html;
+-( void )loadViewFromUrl:( NSURL* )url;
 
 @end
