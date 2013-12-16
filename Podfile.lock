@@ -1,0 +1,10 @@
+PODS:
+  - ObjectiveGumbo (0.1)
+
+DEPENDENCIES:
+  - ObjectiveGumbo (~> 0.1)
+
+SPEC CHECKSUMS:
+  ObjectiveGumbo: 76576087e8b3d6e00f4fd4dee7b13e11b1da68e9
+
+COCOAPODS: 0.24.0
