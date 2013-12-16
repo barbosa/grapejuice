@@ -12,8 +12,10 @@
 #import <ObjectiveGumbo/ObjectiveGumbo.h>
 
 // grapejuice
+#import "GJBodyView.h"
 #import "GJDivView.h"
 #import "GJSpanView.h"
+#import "GJTextView.h"
 
 @implementation UIViewController( GrapeJuice )
 
@@ -35,17 +37,29 @@
 -( void )loadViewFromElement:( OGElement* )element withParent:( UIView* )parent
 {
     for (OGElement* child in element.children) {
-        
-        if (![child isKindOfClass: [OGText class]])
+
+        if ([child isKindOfClass: [OGText class]])
+        {
+            OGText* textNode = ( OGText* )child;
+            NSString* actualText = [textNode.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if( actualText.length > 0 )
+            {
+                GJTextView* mappedView = [[GJTextView alloc] init];
+                mappedView.text = actualText;
+                [parent addSubview: mappedView];
+                
+                // OGText nodes do not have children
+            }
+        }
+        else
         {
             Class mappedClass = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
-            
-            NSLog( @"class is %@", mappedClass );
-            
-            UIView* mappedView = [[mappedClass alloc] init];
-            [parent addSubview: mappedView];
-            
-            [self loadViewFromElement: child withParent: mappedView];
+            if( mappedClass )
+            {
+                UIView* mappedView = [[mappedClass alloc] init];
+                [parent addSubview: mappedView];
+                [self loadViewFromElement: child withParent: mappedView];
+            }
         }
     }
 }
@@ -57,8 +71,9 @@
     if( !classesMap )
     {
         classesMap = @{
+            @(GUMBO_TAG_BODY): [GJBodyView class],
             @(GUMBO_TAG_DIV): [GJDivView class],
-            @(GUMBO_TAG_SPAN): [GJSpanView class]
+            @(GUMBO_TAG_SPAN): [GJSpanView class],
         };
     }
     

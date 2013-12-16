@@ -16,10 +16,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    self.window.rootViewController = [[GrapeJuiceViewController alloc] init];
-    
+    UIViewController* rootViewController = [[GrapeJuiceViewController alloc] init];
+    self.window.rootViewController = rootViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    rootViewController.view.frame = CGRectMake( 0.0f, 20.0f, 320.0f, 480.0f );
+    
     return YES;
 }
 
