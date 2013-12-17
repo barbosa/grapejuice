@@ -10,9 +10,4 @@
 
 @implementation GJLayout
 
-- (BOOL) consumesChildHtmlNode: (OGElement*) element
-{
-    return NO;
-}
-
 @end

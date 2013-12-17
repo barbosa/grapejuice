@@ -22,6 +22,4 @@
 
 @property (nonatomic, strong) NSString* id;
 
-- (BOOL) consumesChildHtmlNode: (OGElement*) element;
-
 @end
