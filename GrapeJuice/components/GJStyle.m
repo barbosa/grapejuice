@@ -20,6 +20,7 @@
 
     style.borderColor = [self colorFromHexString: dictionary[@"border-color"]];
     style.borderRadius = [dictionary[@"border-radius"] floatValue];
+    style.borderWidth = [dictionary[@"border-width"] floatValue];
 
     style.borderTop = [dictionary[@"border-top"] floatValue];
     style.borderRight = [dictionary[@"border-right"] floatValue];
@@ -55,7 +56,7 @@
         [scanner setScanLocation:1];
     [scanner scanHexInt:&result];
 
-    return [UIColor colorFromARGBHex: result];
+    return [UIColor colorFromARGBHex: 0xff000000 | result];
 }
 
 @end

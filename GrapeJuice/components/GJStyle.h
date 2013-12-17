@@ -26,6 +26,7 @@
 @property (nonatomic) CGFloat borderLeft;
 
 @property (nonatomic) CGFloat borderRadius;
+@property (nonatomic) CGFloat borderWidth;
 
 @property (nonatomic) CGFloat width;
 @property (nonatomic) CGFloat height;

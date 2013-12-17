@@ -72,7 +72,7 @@
     
     for ( NSString* class in classes )
     {
-        NSDictionary* classStyles = self.computedStylesheet[class];
+        NSDictionary* classStyles = self.computedStylesheet[[NSString stringWithFormat: @".%@",class]];
         [computed addEntriesFromDictionary: [self normalizedStylesFromDictionary: classStyles]];
     }
     
@@ -102,7 +102,7 @@
         NSString* value = dict[key];
         value = [value stringByReplacingOccurrencesOfString: @"px" withString: @""];
 
-        if ( [value rangeOfString: @"color"].location == NSNotFound )
+        if ( [key rangeOfString: @"color"].location == NSNotFound )
             normalizedDict[key] = @([value floatValue]);
     }
 
