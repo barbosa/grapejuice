@@ -59,7 +59,7 @@
 
     [bodyContentView addSubview: mappedContentView];
     
-    self.autoresizingMask = UIViewAutoresizingNone | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;;
+    self.autoresizingMask = UIViewAutoresizingNone | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     
     bodyContentView.frame = self.bounds;
     bodyContentView.autoresizingMask = UIViewAutoresizingNone | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
