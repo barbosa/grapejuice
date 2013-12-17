@@ -17,6 +17,7 @@
 #import "GJSpanView.h"
 #import "GJTextView.h"
 #import "GJButtonView.h"
+#import "GJStylesheet.h"
 
 @implementation UIViewController( GrapeJuice )
 
@@ -28,7 +29,24 @@
         return;
     
     self.view = [[UIViewController grapeJuiceClassesMap][@(GUMBO_TAG_BODY)] new];
-    
+
+    NSArray* stylesheetElements = [data elementsWithTag: GUMBO_TAG_LINK];
+
+    GJStylesheet* stylesheet = nil;
+
+    for ( OGElement* stylesheetElement in stylesheetElements )
+    {
+        NSString* href = stylesheetElement.attributes[@"href"];
+        NSURL* url = [[NSBundle mainBundle] URLForResource: [href stringByDeletingPathExtension] withExtension: [href pathExtension]];
+        if ( url )
+        {
+            if ( !stylesheet )
+                stylesheet = [GJStylesheet stylesheetFromUrl: url];
+            else
+                [stylesheet addStylesheetFromUrl: url];
+        }
+    }
+
     OGElement* body = bodyElements[0];
     
     [self loadViewFromElement: body withParent: self.view];
