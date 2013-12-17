@@ -35,6 +35,9 @@
 		1558AEC4185F8F25001BB976 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE92185F8F25001BB976 /* README.md */; };
 		1558AEE5185F8F61001BB976 /* simple.css in Resources */ = {isa = PBXBuildFile; fileRef = 1558AEE4185F8F61001BB976 /* simple.css */; };
 		633E2BBE1860765600163A0D /* GJSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GJSpanView.m */; };
+		1558AEE9185F9F0B001BB976 /* GJView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEE8185F9F0B001BB976 /* GJView.m */; };
+		1558AEEC185F9FA0001BB976 /* GJStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEEB185F9FA0001BB976 /* GJStyle.m */; };
+		1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEEE185FA4AB001BB976 /* GJStylesheet.m */; };
 		C29067C50F1A497380A5E6E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE8F12AA274E11AFE6D645 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +96,12 @@
 		1558AE92185F8F25001BB976 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1558AE93185F8F25001BB976 /* test.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = test.css; sourceTree = "<group>"; };
 		1558AEE4185F8F61001BB976 /* simple.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = simple.css; sourceTree = "<group>"; };
+		1558AEE7185F9F0B001BB976 /* GJView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJView.h; sourceTree = "<group>"; };
+		1558AEE8185F9F0B001BB976 /* GJView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJView.m; sourceTree = "<group>"; };
+		1558AEEA185F9FA0001BB976 /* GJStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJStyle.h; sourceTree = "<group>"; };
+		1558AEEB185F9FA0001BB976 /* GJStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJStyle.m; sourceTree = "<group>"; };
+		1558AEED185FA4AB001BB976 /* GJStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJStylesheet.h; sourceTree = "<group>"; };
+		1558AEEE185FA4AB001BB976 /* GJStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJStylesheet.m; sourceTree = "<group>"; };
 		4AAE8F12AA274E11AFE6D645 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3BF6969A8B148BEBA74EAC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +154,12 @@
 				12A5E182185F8E97008D8471 /* GJTextView.m */,
 				12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */,
 				12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */,
+				1558AEE7185F9F0B001BB976 /* GJView.h */,
+				1558AEE8185F9F0B001BB976 /* GJView.m */,
+				1558AEEA185F9FA0001BB976 /* GJStyle.h */,
+				1558AEEB185F9FA0001BB976 /* GJStyle.m */,
+				1558AEED185FA4AB001BB976 /* GJStylesheet.h */,
+				1558AEEE185FA4AB001BB976 /* GJStylesheet.m */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -411,13 +426,16 @@
 				12A5E18B186079E6008D8471 /* UIView+HtmlLayout.m in Sources */,
 				12A5E183185F8E97008D8471 /* GJTextView.m in Sources */,
 				12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */,
+				1558AEE9185F9F0B001BB976 /* GJView.m in Sources */,
 				1558AEBF185F8F25001BB976 /* ESCssTokens.m in Sources */,
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
 				1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
+				1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */,
 				12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */,
 				12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */,
 				1558AE60185F6A21001BB976 /* main.m in Sources */,
+				1558AEEC185F9FA0001BB976 /* GJStyle.m in Sources */,
 				1558AEBE185F8F25001BB976 /* ESCssTokenizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
