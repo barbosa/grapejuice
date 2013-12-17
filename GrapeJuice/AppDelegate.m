@@ -22,7 +22,10 @@
     [self.window makeKeyAndVisible];
     
     // Posiciona embaixo da status bar
-    rootViewController.view.frame = CGRectMake( 0.0f, 20.0f, 320.0f, 480.0f );
+    rootViewController.view.frame = CGRectMake( 0.0f,
+                                                [UIApplication sharedApplication].statusBarFrame.size.height,
+                                                [UIScreen mainScreen].bounds.size.width,
+                                                [UIScreen mainScreen].bounds.size.height - [UIApplication sharedApplication].statusBarFrame.size.height );
     
     return YES;
 }
