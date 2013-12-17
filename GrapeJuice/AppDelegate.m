@@ -21,6 +21,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    // Posiciona embaixo da status bar
     rootViewController.view.frame = CGRectMake( 0.0f, 20.0f, 320.0f, 480.0f );
     
     return YES;

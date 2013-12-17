@@ -13,6 +13,8 @@
 		12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17C185F80DE008D8471 /* GJDivView.m */; };
 		12A5E183185F8E97008D8471 /* GJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E182185F8E97008D8471 /* GJTextView.m */; };
 		12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E185185F97B7008D8471 /* GJBodyView.m */; };
+		12A5E1881860776E008D8471 /* no-css.html in Resources */ = {isa = PBXBuildFile; fileRef = 12A5E1871860776E008D8471 /* no-css.html */; };
+		12A5E18B186079E6008D8471 /* UIView+HtmlLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */; };
 		1558AE54185F6A21001BB976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE53185F6A21001BB976 /* Foundation.framework */; };
 		1558AE56185F6A21001BB976 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE55185F6A21001BB976 /* CoreGraphics.framework */; };
 		1558AE58185F6A21001BB976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE57185F6A21001BB976 /* UIKit.framework */; };
@@ -60,6 +62,9 @@
 		12A5E182185F8E97008D8471 /* GJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJTextView.m; sourceTree = "<group>"; };
 		12A5E184185F97B7008D8471 /* GJBodyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJBodyView.h; sourceTree = "<group>"; };
 		12A5E185185F97B7008D8471 /* GJBodyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJBodyView.m; sourceTree = "<group>"; };
+		12A5E1871860776E008D8471 /* no-css.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "no-css.html"; sourceTree = "<group>"; };
+		12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HtmlLayout.h"; sourceTree = "<group>"; };
+		12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HtmlLayout.m"; sourceTree = "<group>"; };
 		1558AE50185F6A21001BB976 /* GrapeJuice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeJuice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1558AE53185F6A21001BB976 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1558AE55185F6A21001BB976 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +127,7 @@
 			children = (
 				12A5E172185F6E5E008D8471 /* simple.html */,
 				1558AEE4185F8F61001BB976 /* simple.css */,
+				12A5E1871860776E008D8471 /* no-css.html */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 				12A5E17F185F80EF008D8471 /* GJSpanView.m */,
 				12A5E181185F8E97008D8471 /* GJTextView.h */,
 				12A5E182185F8E97008D8471 /* GJTextView.m */,
+				12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */,
+				12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1558AEE5185F8F61001BB976 /* simple.css in Resources */,
+				12A5E1881860776E008D8471 /* no-css.html in Resources */,
 				1558AEC4185F8F25001BB976 /* README.md in Resources */,
 				1558AE5E185F6A21001BB976 /* InfoPlist.strings in Resources */,
 				1558AE66185F6A21001BB976 /* Images.xcassets in Resources */,
@@ -399,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				633E2BBE1860765600163A0D /* GJSpanView.m in Sources */,
+				12A5E18B186079E6008D8471 /* UIView+HtmlLayout.m in Sources */,
 				12A5E183185F8E97008D8471 /* GJTextView.m in Sources */,
 				12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */,
 				1558AEBF185F8F25001BB976 /* ESCssTokens.m in Sources */,

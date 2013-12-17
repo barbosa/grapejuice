@@ -8,6 +8,9 @@
 
 #import "GJBodyView.h"
 
+// grapejuice
+#import "UIView+HtmlLayout.h"
+
 @implementation GJBodyView
 
 -( void )willMoveToWindow:( UIWindow* )newWindow
@@ -29,7 +32,7 @@
     myFrame.size = window.frame.size;
     self.frame = myFrame;
     
-    [super layoutSubviews];
+    [self layoutSubviewsInsideOut];
 }
 
 @end
