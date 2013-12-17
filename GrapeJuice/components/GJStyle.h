@@ -35,6 +35,8 @@
 
 @property (nonatomic, strong) UIColor* backgroundColor;
 
+@property (nonatomic, strong) UIColor* color;
+
 +( GJStyle* )styleFromDictionary:( NSDictionary* )dictionary;
 
 @end

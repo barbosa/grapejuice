@@ -16,6 +16,8 @@
 {
     GJStyle* style = [GJStyle new];
 
+    style.color = [self colorFromHexString: dictionary[@"color"]];
+
     style.backgroundColor = [self colorFromHexString: dictionary[@"background-color"]];
 
     style.borderColor = [self colorFromHexString: dictionary[@"border-color"]];
