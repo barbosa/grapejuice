@@ -102,7 +102,8 @@
         NSString* value = dict[key];
         value = [value stringByReplacingOccurrencesOfString: @"px" withString: @""];
 
-        normalizedDict[key] = @([value floatValue]);
+        if ( [value rangeOfString: @"color"].location == NSNotFound )
+            normalizedDict[key] = @([value floatValue]);
     }
 
     return normalizedDict;
