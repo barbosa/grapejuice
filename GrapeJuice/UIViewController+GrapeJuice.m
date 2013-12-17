@@ -16,6 +16,7 @@
 #import "GJDivView.h"
 #import "GJSpanView.h"
 #import "GJTextView.h"
+#import "GJButtonView.h"
 
 @implementation UIViewController( GrapeJuice )
 
@@ -52,20 +53,24 @@
         }
         else
         {
-            Class className = nil;
+            Class mappedClass = nil;
             NSString *customClassName = [child.attributes objectForKey:@"data-class"];
             if (customClassName) {
-                className = NSClassFromString(customClassName);
+                mappedClass = NSClassFromString(customClassName);
             }
             else {
-                className = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
+                mappedClass = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
             }
-            if (!className) {
-                [NSException raise:@"Class not found" format:@"Class %@ not found", className];
-            }
-            UIView* currentView = [[className alloc] init];
-            [parent addSubview: currentView];
-            [self loadViewFromElement: child withParent: currentView];
+            if (!mappedClass) {
+                [NSException raise:@"Class not found" format:@"Class %@ not found", mappedClass];
+            
+            UIView* mappedView = [[mappedClass alloc] init];
+            [parent addSubview: mappedView];
+
+            if ([mappedView respondsToSelector: @selector(consumesChildHtmlNode:)])
+                [mappedView performSelector:  @selector(consumesChildHtmlNode:) withObject: child];
+            else
+                [self loadViewFromElement: child withParent: mappedView];
         }
     }
 }
@@ -80,6 +85,7 @@
             @(GUMBO_TAG_BODY): [GJBodyView class],
             @(GUMBO_TAG_DIV): [GJDivView class],
             @(GUMBO_TAG_SPAN): [GJSpanView class],
+            @(GUMBO_TAG_BUTTON): [GJButtonView class],
         };
     }
     
