@@ -7,12 +7,14 @@
     background-color: #986faa;
     width: 200px;
     height: 150px;
+    border-left: 3px;
 }
 
 .orangejuice {
     background-color: #f7a500;
     border-color: #ababab;
     border-radius: 8px;
+    border-right: 3px;
 }
 
 .applejuice {
@@ -20,6 +22,12 @@
     border-width: 1px;
     border-color: #e5e5e5;
     border-radius: 4px;
+    border-bottom: 5px;
+}
+
+.pineapplejuice {
+    border-top: 6px;
+    background-color: #F0E68C;
 }
 
 div{
