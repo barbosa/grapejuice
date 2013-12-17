@@ -64,8 +64,6 @@
     bodyContentView.frame = self.bounds;
     bodyContentView.autoresizingMask = UIViewAutoresizingNone | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-    bodyContentView.backgroundColor = [UIColor redColor];
-    
     return YES;
 }
 

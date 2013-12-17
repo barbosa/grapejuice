@@ -10,10 +10,14 @@
 
 @class GJLayout;
 
-@interface GJButtonView : UIButton
+@interface GJButtonView : UIView
+{
+    @protected
+        UIButton* mappedButton;
+}
 
-@property (nonatomic, readwrite, strong) GJLayout* layout;
+@property( nonatomic, readwrite, strong )GJLayout* layout;
 
-- (void) consumesChildHtmlNode: (OGElement*) element;
+-( void )consumesChildHtmlNode:( OGElement* )element;
 
 @end

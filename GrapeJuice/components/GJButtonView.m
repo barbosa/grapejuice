@@ -8,23 +8,143 @@
 
 #import "GJButtonView.h"
 
+// grapejuice
+#import "NSString+Utils.h"
+
+@interface GJButtonView()
+
+@property( nonatomic, readwrite, strong )NSString* mappedText;
+
+@end
+
 @implementation GJButtonView
 
-- (void) consumesChildHtmlNode: (OGElement*) element
+-( id )initWithFrame:( CGRect )frame
+{
+    self = [super initWithFrame: frame];
+    if( self )
+    {
+        if( ![self buildGJButtonView] )
+            return nil;
+    }
+    return self;
+}
+
+-( id )initWithCoder:( NSCoder* )aDecoder
+{
+    self = [super initWithCoder: aDecoder];
+    if( self )
+    {
+        if( ![self buildGJButtonView] )
+            return nil;
+    }
+    return self;
+}
+
+-( BOOL )buildGJButtonView
+{
+    mappedButton = [UIButton buttonWithType: UIButtonTypeSystem];
+    if( !mappedButton )
+        return  NO;
+    
+    // We MUST call super here since we override addSubview
+    [super addSubview: mappedButton];
+
+    mappedButton.frame = self.bounds;
+    mappedButton.autoresizingMask = UIViewAutoresizingNone | UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;;
+    
+    return YES;
+}
+
+-( void )consumesChildHtmlNode:( OGElement* )element
 {
     OGElement* child = element.children.firstObject;
     if ([child isKindOfClass: [OGText class]])
     {
         OGText* textNode = ( OGText* )child;
-        NSString* actualText = [textNode.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if( actualText.length > 0 )
+        self.mappedText = [textNode.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if( self.mappedText.length > 0 )
         {
-            [self setTitle: actualText forState: UIControlStateNormal];
-            [self setTitleColor: [UIColor lightTextColor] forState: UIControlStateNormal];
-            self.backgroundColor = [UIColor darkTextColor];
-            self.frame = CGRectMake(0.0, 0.0, 100.0, 20.0);
+            [mappedButton setTitle: self.mappedText forState:UIControlStateNormal];
+            [mappedButton setTitle: self.mappedText forState:UIControlStateDisabled];
+            [mappedButton setTitle: self.mappedText forState:UIControlStateHighlighted];
+            [mappedButton setTitle: self.mappedText forState:UIControlStateReserved];
+            [mappedButton setTitle: self.mappedText forState:UIControlStateSelected];
+            [mappedButton setTitle: self.mappedText forState:UIControlStateApplication];
         }
     }
 }
 
+-( void )addSubview:( UIView* )view
+{
+    // Cannot add subviews to buttons, so we do nothing here
+}
+
+-( void )layoutSubviews
+{
+    CGSize textSize = [self.mappedText sizeNeededWithFont: mappedButton.titleLabel.font
+                                                   insets: UIEdgeInsetsZero
+                                                 maxWidth: mappedButton.superview.frame.size.width
+                                            lineBreakMode: mappedButton.titleLabel.lineBreakMode
+                                         andTextAlignment: mappedButton.titleLabel.textAlignment];
+    
+    CGRect myFrame = self.frame;
+    myFrame.size = textSize;
+    self.frame = myFrame;
+    
+    [mappedButton layoutSubviews];
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

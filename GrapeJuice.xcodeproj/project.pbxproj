@@ -15,6 +15,8 @@
 		12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E185185F97B7008D8471 /* GJBodyView.m */; };
 		12A5E1881860776E008D8471 /* no-css.html in Resources */ = {isa = PBXBuildFile; fileRef = 12A5E1871860776E008D8471 /* no-css.html */; };
 		12A5E18B186079E6008D8471 /* UIView+HtmlLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */; };
+		12A5E18E1860ACD5008D8471 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E18D1860ACD5008D8471 /* NSString+Utils.m */; };
+		12A5E1911860AF9C008D8471 /* CallAlertButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E1901860AF9C008D8471 /* CallAlertButton.m */; };
 		1558AE54185F6A21001BB976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE53185F6A21001BB976 /* Foundation.framework */; };
 		1558AE56185F6A21001BB976 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE55185F6A21001BB976 /* CoreGraphics.framework */; };
 		1558AE58185F6A21001BB976 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE57185F6A21001BB976 /* UIKit.framework */; };
@@ -71,6 +73,10 @@
 		12A5E1871860776E008D8471 /* no-css.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "no-css.html"; sourceTree = "<group>"; };
 		12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+HtmlLayout.h"; sourceTree = "<group>"; };
 		12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+HtmlLayout.m"; sourceTree = "<group>"; };
+		12A5E18C1860ACD5008D8471 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		12A5E18D1860ACD5008D8471 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		12A5E18F1860AF9C008D8471 /* CallAlertButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CallAlertButton.h; sourceTree = "<group>"; };
+		12A5E1901860AF9C008D8471 /* CallAlertButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CallAlertButton.m; sourceTree = "<group>"; };
 		1558AE50185F6A21001BB976 /* GrapeJuice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeJuice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1558AE53185F6A21001BB976 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1558AE55185F6A21001BB976 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -153,24 +159,24 @@
 		12A5E17A185F80B1008D8471 /* components */ = {
 			isa = PBXGroup;
 			children = (
-				63D6354518608A5600C0BECC /* GJButtonView.m */,
-				63D6354618608A5600C0BECC /* GJButtonView.h */,
 				12A5E184185F97B7008D8471 /* GJBodyView.h */,
 				12A5E185185F97B7008D8471 /* GJBodyView.m */,
+				63D6354618608A5600C0BECC /* GJButtonView.h */,
+				63D6354518608A5600C0BECC /* GJButtonView.m */,
 				12A5E17B185F80DE008D8471 /* GJDivView.h */,
 				12A5E17C185F80DE008D8471 /* GJDivView.m */,
-				12A5E17E185F80EF008D8471 /* GJSpanView.h */,
-				12A5E17F185F80EF008D8471 /* GJSpanView.m */,
-				12A5E181185F8E97008D8471 /* GJTextView.h */,
-				12A5E182185F8E97008D8471 /* GJTextView.m */,
-				12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */,
-				12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */,
 				1558AEE7185F9F0B001BB976 /* GJLayout.h */,
 				1558AEE8185F9F0B001BB976 /* GJLayout.m */,
+				12A5E17E185F80EF008D8471 /* GJSpanView.h */,
+				12A5E17F185F80EF008D8471 /* GJSpanView.m */,
 				1558AEEA185F9FA0001BB976 /* GJStyle.h */,
 				1558AEEB185F9FA0001BB976 /* GJStyle.m */,
 				1558AEED185FA4AB001BB976 /* GJStylesheet.h */,
 				1558AEEE185FA4AB001BB976 /* GJStylesheet.m */,
+				12A5E181185F8E97008D8471 /* GJTextView.h */,
+				12A5E182185F8E97008D8471 /* GJTextView.m */,
+				12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */,
+				12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -225,6 +231,10 @@
 				1558AE5A185F6A21001BB976 /* Supporting Files */,
 				6A47FDA2186087140036749C /* CustomDivView.h */,
 				6A47FDA3186087140036749C /* CustomDivView.m */,
+				12A5E18C1860ACD5008D8471 /* NSString+Utils.h */,
+				12A5E18D1860ACD5008D8471 /* NSString+Utils.m */,
+				12A5E18F1860AF9C008D8471 /* CallAlertButton.h */,
+				12A5E1901860AF9C008D8471 /* CallAlertButton.m */,
 			);
 			path = GrapeJuice;
 			sourceTree = "<group>";
@@ -448,9 +458,11 @@
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
 				1593DCD91860AF9C00B28C2B /* UIColorUtils.m in Sources */,
 				1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */,
+				12A5E1911860AF9C008D8471 /* CallAlertButton.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */,
 				12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */,
+				12A5E18E1860ACD5008D8471 /* NSString+Utils.m in Sources */,
 				12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */,
 				1558AE60185F6A21001BB976 /* main.m in Sources */,
 				1558AEEC185F9FA0001BB976 /* GJStyle.m in Sources */,

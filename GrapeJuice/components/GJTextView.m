@@ -8,37 +8,8 @@
 
 #import "GJTextView.h"
 
-@implementation NSString( Utils )
-
--( CGSize )sizeNeededWithFont:( UIFont* )font
-                       insets:( UIEdgeInsets )textInsets
-                     maxWidth:( CGFloat )maxWidth
-                lineBreakMode:( NSLineBreakMode )lineBreakMode
-             andTextAlignment:( NSTextAlignment )textAlignment
-{
-    CGSize sizeConstraint = CGSizeMake(maxWidth - textInsets.left - textInsets.right, CGFLOAT_MAX);
-    
-    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineBreakMode = lineBreakMode;
-    paragraphStyle.alignment = textAlignment;
-    
-    CGSize sizeNeeded = [self boundingRectWithSize: sizeConstraint
-                                           options: NSStringDrawingUsesLineFragmentOrigin
-                                        attributes: @{ NSFontAttributeName: font,
-                                                       NSParagraphStyleAttributeName: paragraphStyle }
-                                           context: nil].size;
-    
-    sizeNeeded.width += textInsets.left + textInsets.right;
-    sizeNeeded.height += textInsets.top + textInsets.bottom;
-    
-    // See -boundingRectWithSize:options:attributes:context: docs
-    sizeNeeded.width = ceil(sizeNeeded.width);
-    sizeNeeded.height = ceil(sizeNeeded.height);
-    
-    return sizeNeeded;
-}
-
-@end
+// grapejuice
+#import "NSString+Utils.h"
 
 @implementation GJTextView
 
