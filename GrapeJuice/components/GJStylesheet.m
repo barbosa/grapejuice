@@ -73,7 +73,7 @@
     for ( NSString* class in classes )
     {
         NSDictionary* classStyles = self.computedStylesheet[class];
-        [computed addEntriesFromDictionary: classStyles];
+        [computed addEntriesFromDictionary: [self normalizedStylesFromDictionary: classStyles]];
     }
     
     return computed;
@@ -84,12 +84,67 @@
     NSMutableDictionary* computed = [NSMutableDictionary dictionary];
     
     NSDictionary* catchAll = self.computedStylesheet[@"*"];
-    [computed addEntriesFromDictionary: catchAll];
+    [computed addEntriesFromDictionary: [self normalizedStylesFromDictionary: catchAll]];
     
     NSDictionary* tagStyles = self.computedStylesheet[tag];
-    [computed addEntriesFromDictionary: tagStyles];
+    [computed addEntriesFromDictionary: [self normalizedStylesFromDictionary: tagStyles]];
     
     return computed;
+}
+
+-( NSDictionary* )normalizedStylesFromDictionary:( NSDictionary* )dict
+{
+    dict = [self expandedStylesFromDictionary: dict];
+    NSMutableDictionary* normalizedDict = [NSMutableDictionary dictionaryWithDictionary: dict];
+
+    for ( NSString* key in [dict allKeys] )
+    {
+        NSString* value = dict[key];
+        value = [value stringByReplacingOccurrencesOfString: @"px" withString: @""];
+
+        normalizedDict[key] = @([value floatValue]);
+    }
+
+    return normalizedDict;
+}
+
+-( NSDictionary* )expandedStylesFromDictionary:( NSDictionary* )dict
+{
+    NSMutableDictionary* expandedDict = [NSMutableDictionary dictionaryWithDictionary: dict];
+
+    NSArray* expandableKeys = @[@"border", @"margin", @"padding"];
+    NSArray* directionKeys = @[@"top", @"right", @"bottom", @"left"];
+
+    for ( NSString* key in expandableKeys )
+    {
+        [expandedDict removeObjectForKey: key];
+
+        NSString* value = dict[key];
+        if ( [value length] )
+        {
+            NSArray* components = [value componentsSeparatedByCharactersInSet: [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            if ( [components count] > 1 )
+            {
+                for ( NSUInteger i = 0; i < [components count]; i++ )
+                {
+                    NSString* expandedKey = [NSString stringWithFormat:@"%@-%@", key, directionKeys[i]];
+                    if ( !expandedDict[expandedKey] )
+                        expandedDict[expandedKey] = components[i];
+                }
+            }
+            else
+            {
+                for ( NSUInteger i = 0; i < [directionKeys count]; i++ )
+                {
+                    NSString* expandedKey = [NSString stringWithFormat:@"%@-%@", key, directionKeys[i]];
+                    if ( !expandedDict[expandedKey] )
+                        expandedDict[expandedKey] = components[0];
+                }
+            }
+        }
+    }
+
+    return expandedDict;
 }
 
 @end

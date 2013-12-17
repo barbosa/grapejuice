@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class GJStyle;
+
 @interface GJStylesheet : NSObject
 
 +( GJStylesheet* )stylesheetFromUrl:( NSURL* )url;
 +( GJStylesheet* )stylesheetFromUrls:( NSArray* )urls;
+
+-( GJStyle* )computedStyleForTag:( NSString* )tag classes:( NSArray* )classes;
 
 -( void )addStylesheet:( NSDictionary* )dictionary;
 -( void )addStylesheetFromUrl:( NSURL* )url;
