@@ -14,6 +14,7 @@
 // grapejuice
 #import "GJBodyView.h"
 #import "GJDivView.h"
+#import "GJLayout.h"
 #import "GJSpanView.h"
 #import "GJTextView.h"
 #import "GJButtonView.h"
@@ -49,10 +50,10 @@
 
     OGElement* body = bodyElements[0];
     
-    [self loadViewFromElement: body withParent: self.view];
+    [self loadViewFromElement: body withParent: self.view stylesheet: stylesheet];
 }
 
--( void )loadViewFromElement:( OGElement* )element withParent:( UIView* )parent
+-( void )loadViewFromElement:( OGElement* )element withParent:( UIView* )parent stylesheet:( GJStylesheet* )stylesheet
 {
     for (OGElement* child in element.children) {
 
@@ -89,10 +90,20 @@
             UIView* mappedView = [[mappedClass alloc] init];
             [parent addSubview: mappedView];
 
+            if ([mappedView respondsToSelector: @selector(setLayout:)])
+            {
+                GJLayout* layout = [GJLayout new];
+                layout.stylesheet = stylesheet;
+                layout.tag = [OGUtility tagForGumboTag: child.tag];
+                layout.classes = child.classes;
+
+                [mappedView performSelector: @selector(setLayout:) withObject: layout];
+            }
+
             if ([mappedView respondsToSelector: @selector(consumesChildHtmlNode:)])
                 [mappedView performSelector:  @selector(consumesChildHtmlNode:) withObject: child];
             else
-                [self loadViewFromElement: child withParent: mappedView];
+                [self loadViewFromElement: child withParent: mappedView stylesheet: stylesheet];
         }
     }
 }

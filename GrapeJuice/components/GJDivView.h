@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GJLayout;
+
 @interface GJDivView : UIView
+
+@property (nonatomic, strong) GJLayout* layout;
 
 @end
