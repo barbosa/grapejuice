@@ -9,6 +9,9 @@
 #import "GJTextView.h"
 
 // grapejuice
+#import "GJLayout.h"
+#import "GJStyle.h"
+#import "GJStylesheet.h"
 #import "NSString+Utils.h"
 
 @implementation GJTextView
@@ -36,6 +39,18 @@
 -( void )layoutSubviews
 {
     CGRect myFrame = self.frame;
+
+    SEL layoutGetter = @selector(layout);
+    if( [self.superview respondsToSelector: layoutGetter] )
+    {
+        GJLayout* layout = ( GJLayout* )[self.superview performSelector: layoutGetter];
+        self.style = [layout.stylesheet computedStyleForTag: layout.tag classes: layout.classes];
+    }
+    
+    if( _style )
+        self.textColor = _style.color;
+    else
+        self.textColor = [UIColor blackColor];
     
     if( self.text.length <= 0 )
     {

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GJStyle;
+
 @interface GJTextView : UILabel
+
+@property( nonatomic, readwrite, strong )GJStyle* style;
 
 @end

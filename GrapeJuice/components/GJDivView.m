@@ -14,15 +14,21 @@
 #import "GJStyle.h"
 #import "GJStylesheet.h"
 
+@interface GJDivView()
+
+@property( nonatomic, readwrite, strong )GJStyle* computedStyle;
+
+@end
+
 @implementation GJDivView
 
 -( void )layoutSubviews
 {
-    GJStyle* computedStyle = [_layout.stylesheet computedStyleForTag: _layout.tag classes: _layout.classes];
+    self.computedStyle = [_layout.stylesheet computedStyleForTag: _layout.tag classes: _layout.classes];
 
-    self.layer.borderColor = computedStyle.borderColor.CGColor;
-    self.layer.borderWidth = computedStyle.borderWidth;
-    self.backgroundColor = computedStyle.backgroundColor;
+    self.layer.borderColor = _computedStyle.borderColor.CGColor;
+    self.layer.borderWidth = _computedStyle.borderWidth;
+    self.backgroundColor = _computedStyle.backgroundColor;
     [self layoutSubviewsInsideOut];
 }
 

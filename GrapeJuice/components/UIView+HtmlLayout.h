@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class GJStyle;
+
 @interface UIView( HtmlLayout )
 
 -( void )layoutSubviewsInsideOut;
+-( void )drawBordersOnRect:( CGRect )rect withStyle:( GJStyle* )style;
 
 @end
