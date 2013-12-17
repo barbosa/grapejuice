@@ -10,11 +10,19 @@
 
 // grapejuice
 #import "UIView+HtmlLayout.h"
+#import "GJLayout.h"
+#import "GJStyle.h"
+#import "GJStylesheet.h"
 
 @implementation GJDivView
 
 -( void )layoutSubviews
 {
+    GJStyle* computedStyle = [_layout.stylesheet computedStyleForTag: _layout.tag classes: _layout.classes];
+
+    self.layer.borderColor = computedStyle.borderColor.CGColor;
+    self.layer.borderWidth = computedStyle.borderWidth;
+    self.backgroundColor = computedStyle.backgroundColor;
     [self layoutSubviewsInsideOut];
 }
 
