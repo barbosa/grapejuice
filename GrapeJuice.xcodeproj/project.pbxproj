@@ -39,6 +39,7 @@
 		1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEEE185FA4AB001BB976 /* GJStylesheet.m */; };
 		633E2BBE1860765600163A0D /* GJSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GJSpanView.m */; };
 		6A47FDA4186087140036749C /* CustomDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47FDA3186087140036749C /* CustomDivView.m */; };
+		63D6354718608A5600C0BECC /* GJButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6354518608A5600C0BECC /* GJButtonView.m */; };
 		C29067C50F1A497380A5E6E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE8F12AA274E11AFE6D645 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +107,8 @@
 		4AAE8F12AA274E11AFE6D645 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A47FDA2186087140036749C /* CustomDivView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDivView.h; sourceTree = "<group>"; };
 		6A47FDA3186087140036749C /* CustomDivView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDivView.m; sourceTree = "<group>"; };
+		63D6354518608A5600C0BECC /* GJButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJButtonView.m; sourceTree = "<group>"; };
+		63D6354618608A5600C0BECC /* GJButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJButtonView.h; sourceTree = "<group>"; };
 		B3BF6969A8B148BEBA74EAC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +150,8 @@
 		12A5E17A185F80B1008D8471 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				63D6354518608A5600C0BECC /* GJButtonView.m */,
+				63D6354618608A5600C0BECC /* GJButtonView.h */,
 				12A5E184185F97B7008D8471 /* GJBodyView.h */,
 				12A5E185185F97B7008D8471 /* GJBodyView.m */,
 				12A5E17B185F80DE008D8471 /* GJDivView.h */,
@@ -428,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				633E2BBE1860765600163A0D /* GJSpanView.m in Sources */,
+				63D6354718608A5600C0BECC /* GJButtonView.m in Sources */,
 				12A5E18B186079E6008D8471 /* UIView+HtmlLayout.m in Sources */,
 				12A5E183185F8E97008D8471 /* GJTextView.m in Sources */,
 				12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */,
