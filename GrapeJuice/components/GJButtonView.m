@@ -11,6 +11,10 @@
 // grapejuice
 #import "NSString+Utils.h"
 
+#import "GJLayout.h"
+#import "GJStylesheet.h"
+#import "GJStyle.h"
+
 @interface GJButtonView()
 
 @property( nonatomic, readwrite, strong )NSString* mappedText;
@@ -87,11 +91,20 @@
                                                  maxWidth: mappedButton.superview.frame.size.width
                                             lineBreakMode: mappedButton.titleLabel.lineBreakMode
                                          andTextAlignment: mappedButton.titleLabel.textAlignment];
+
+    GJStyle* style = [self.layout.stylesheet computedStyleForTag: self.layout.tag
+                                                         classes: self.layout.classes];
+
+    textSize.width += style.paddingLeft + style.paddingRight;
+    textSize.height += style.paddingTop + style.paddingBottom;
+
+    if (style.backgroundColor)
+        [self setBackgroundColor: style.backgroundColor];
     
     CGRect myFrame = self.frame;
     myFrame.size = textSize;
     self.frame = myFrame;
-    
+
     [mappedButton layoutSubviews];
 }
 
