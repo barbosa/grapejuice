@@ -37,9 +37,10 @@
 		1558AEE9185F9F0B001BB976 /* GJLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEE8185F9F0B001BB976 /* GJLayout.m */; };
 		1558AEEC185F9FA0001BB976 /* GJStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEEB185F9FA0001BB976 /* GJStyle.m */; };
 		1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1558AEEE185FA4AB001BB976 /* GJStylesheet.m */; };
+		1593DCD91860AF9C00B28C2B /* UIColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1593DCD81860AF9C00B28C2B /* UIColorUtils.m */; };
 		633E2BBE1860765600163A0D /* GJSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GJSpanView.m */; };
-		6A47FDA4186087140036749C /* CustomDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47FDA3186087140036749C /* CustomDivView.m */; };
 		63D6354718608A5600C0BECC /* GJButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6354518608A5600C0BECC /* GJButtonView.m */; };
+		6A47FDA4186087140036749C /* CustomDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47FDA3186087140036749C /* CustomDivView.m */; };
 		C29067C50F1A497380A5E6E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE8F12AA274E11AFE6D645 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -104,11 +105,13 @@
 		1558AEEB185F9FA0001BB976 /* GJStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJStyle.m; sourceTree = "<group>"; };
 		1558AEED185FA4AB001BB976 /* GJStylesheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJStylesheet.h; sourceTree = "<group>"; };
 		1558AEEE185FA4AB001BB976 /* GJStylesheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJStylesheet.m; sourceTree = "<group>"; };
+		1593DCD71860AF9C00B28C2B /* UIColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIColorUtils.h; sourceTree = "<group>"; };
+		1593DCD81860AF9C00B28C2B /* UIColorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIColorUtils.m; sourceTree = "<group>"; };
 		4AAE8F12AA274E11AFE6D645 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		6A47FDA2186087140036749C /* CustomDivView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDivView.h; sourceTree = "<group>"; };
-		6A47FDA3186087140036749C /* CustomDivView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDivView.m; sourceTree = "<group>"; };
 		63D6354518608A5600C0BECC /* GJButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJButtonView.m; sourceTree = "<group>"; };
 		63D6354618608A5600C0BECC /* GJButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJButtonView.h; sourceTree = "<group>"; };
+		6A47FDA2186087140036749C /* CustomDivView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDivView.h; sourceTree = "<group>"; };
+		6A47FDA3186087140036749C /* CustomDivView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDivView.m; sourceTree = "<group>"; };
 		B3BF6969A8B148BEBA74EAC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -208,6 +211,8 @@
 		1558AE59185F6A21001BB976 /* GrapeJuice */ = {
 			isa = PBXGroup;
 			children = (
+				1593DCD71860AF9C00B28C2B /* UIColorUtils.h */,
+				1593DCD81860AF9C00B28C2B /* UIColorUtils.m */,
 				12A5E17A185F80B1008D8471 /* components */,
 				1558AE62185F6A21001BB976 /* AppDelegate.h */,
 				1558AE63185F6A21001BB976 /* AppDelegate.m */,
@@ -441,6 +446,7 @@
 				6A47FDA4186087140036749C /* CustomDivView.m in Sources */,
 				1558AEBF185F8F25001BB976 /* ESCssTokens.m in Sources */,
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
+				1593DCD91860AF9C00B28C2B /* UIColorUtils.m in Sources */,
 				1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */,
