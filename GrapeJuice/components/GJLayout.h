@@ -20,6 +20,8 @@
 
 @property (nonatomic, strong) NSArray* classes;
 
+@property (nonatomic, strong) NSString* tag;
+
 @property (nonatomic, strong) NSString* id;
 
 @end
