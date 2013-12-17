@@ -125,9 +125,9 @@
 		12A5E171185F6E5E008D8471 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				12A5E1871860776E008D8471 /* no-css.html */,
 				12A5E172185F6E5E008D8471 /* simple.html */,
 				1558AEE4185F8F61001BB976 /* simple.css */,
-				12A5E1871860776E008D8471 /* no-css.html */,
 			);
 			path = resources;
 			sourceTree = "<group>";

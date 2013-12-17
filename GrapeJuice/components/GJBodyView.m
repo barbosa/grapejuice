@@ -15,11 +15,7 @@
 
 -( void )willMoveToWindow:( UIWindow* )newWindow
 {
-    CGRect myFrame = self.frame;
-    myFrame.size = newWindow.frame.size;
-    self.frame = myFrame;
-    
-    [super layoutSubviews];
+    [self layoutSubviewsForWindow: newWindow];
 }
 
 -( void )layoutSubviews
@@ -28,8 +24,13 @@
     if( !window )
         return;
     
+    [self layoutSubviewsForWindow: window];
+}
+
+-( void )layoutSubviewsForWindow:( UIWindow* )containerWindow
+{
     CGRect myFrame = self.frame;
-    myFrame.size = window.frame.size;
+    myFrame.size = containerWindow.frame.size;
     self.frame = myFrame;
     
     [self layoutSubviewsInsideOut];
