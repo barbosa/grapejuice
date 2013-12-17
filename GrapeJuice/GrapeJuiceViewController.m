@@ -28,7 +28,7 @@
 
 -( void )loadView
 {
-    [self loadViewFromUrl: [[NSBundle mainBundle] URLForResource: @"no-css" withExtension: @"html"]];
+    [self loadViewFromUrl: [[NSBundle mainBundle] URLForResource: @"simple" withExtension: @"html"]];
 }
 
 @end

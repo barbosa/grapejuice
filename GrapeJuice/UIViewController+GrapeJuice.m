@@ -55,15 +55,19 @@
         {
             Class mappedClass = nil;
             NSString *customClassName = [child.attributes objectForKey:@"data-class"];
+            Class defaultClass = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
+            mappedClass = defaultClass;
+
             if (customClassName) {
-                mappedClass = NSClassFromString(customClassName);
+                Class customClass = NSClassFromString(customClassName);
+                if (![customClass isSubclassOfClass: defaultClass])
+                    [NSException raise:@"Invalid class type" format:@"Class %@ should be a subclass of %@", customClass, defaultClass];
+                mappedClass = customClass;
             }
-            else {
-                mappedClass = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
-            }
-            if (!mappedClass) {
-                [NSException raise:@"Class not found" format:@"Class %@ not found", mappedClass];
             
+            if (!mappedClass)
+                [NSException raise:@"Class not found" format:@"Class %@ not found", mappedClass];
+
             UIView* mappedView = [[mappedClass alloc] init];
             [parent addSubview: mappedView];
 
