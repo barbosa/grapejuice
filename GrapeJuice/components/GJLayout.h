@@ -10,8 +10,9 @@
 
 @class GJStyle;
 @class GJStylesheet;
+@class OGElement;
 
-@interface GJView : UIView
+@interface GJLayout : NSObject
 
 @property (nonatomic, strong) GJStylesheet* stylesheet;
 
@@ -20,5 +21,7 @@
 @property (nonatomic, strong) NSArray* classes;
 
 @property (nonatomic, strong) NSString* id;
+
+- (BOOL) consumesChildHtmlNode: (OGElement*) element;
 
 @end

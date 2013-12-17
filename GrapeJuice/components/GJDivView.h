@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GJView.h"
-
-@interface GJDivView : GJView
+@interface GJDivView : UIView
 
 @end

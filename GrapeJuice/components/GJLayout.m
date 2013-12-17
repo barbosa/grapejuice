@@ -6,10 +6,13 @@
 //  Copyright (c) 2013 Globo.com. All rights reserved.
 //
 
-#import "GJView.h"
+#import "GJLayout.h"
 
-@implementation GJView
+@implementation GJLayout
 
-
+- (BOOL) consumesChildHtmlNode: (OGElement*) element
+{
+    return NO;
+}
 
 @end
