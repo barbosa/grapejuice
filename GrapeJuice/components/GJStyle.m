@@ -10,4 +10,10 @@
 
 @implementation GJStyle
 
++( GJStyle* )styleFromDictionary:( NSDictionary* )dictionary
+{
+    GJStyle* style = [GJStyle new];
+    return style;
+}
+
 @end

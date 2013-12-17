@@ -10,4 +10,10 @@
 
 @interface GJStylesheet : NSObject
 
++( GJStylesheet* )stylesheetFromUrl:( NSURL* )url;
++( GJStylesheet* )stylesheetFromUrls:( NSArray* )urls;
+
+-( void )addStylesheet:( NSDictionary* )dictionary;
+-( void )addStylesheetFromUrl:( NSURL* )url;
+
 @end

@@ -8,6 +8,8 @@
 
 #import "GJStylesheet.h"
 
+#import "GJStyle.h"
+
 #import "ESCssParser.h"
 
 @interface GJStylesheet ()
@@ -18,6 +20,23 @@
 
 @implementation GJStylesheet
 
++( GJStylesheet* )stylesheetFromUrl:( NSURL* )url
+{
+    GJStylesheet* stylesheet = [GJStylesheet new];
+    [stylesheet addStylesheetFromUrl: url];
+    return stylesheet;
+}
+
++( GJStylesheet* )stylesheetFromUrls:( NSArray* )urls
+{
+    GJStylesheet* stylesheet = [GJStylesheet new];
+    for ( NSURL* url in urls )
+    {
+        [stylesheet addStylesheetFromUrl: url];
+    }
+    return stylesheet;
+}
+
 -( void )addStylesheet:( NSDictionary* )dictionary
 {
     if ( !self.computedStylesheet )
@@ -25,6 +44,27 @@
     
     [self.computedStylesheet addEntriesFromDictionary: dictionary];
 }
+
+-( void )addStylesheetFromUrl:( NSURL* )url
+{
+    NSString* cssString = [NSString stringWithContentsOfURL: url
+                                                   encoding: NSUTF8StringEncoding
+                                                      error: nil];
+    
+    ESCssParser* parser = [[ESCssParser alloc] init];
+    NSDictionary* styleSheet = [parser parseText: cssString];
+    NSLog(@"styleSheet: %@", styleSheet);
+    [self addStylesheet: styleSheet];
+}
+
+-( GJStyle* )computedStyleForTag:( NSString* )tag classes:( NSArray* )classes
+{
+    NSMutableDictionary* computedStyleDictionary = [NSMutableDictionary dictionaryWithDictionary: [self computedStylesForTag: tag]];
+    [computedStyleDictionary addEntriesFromDictionary: [self computedStylesForClasses: classes]];
+    
+    return [GJStyle styleFromDictionary: computedStyleDictionary];
+}
+
 
 -( NSDictionary* )computedStylesForClasses:( NSArray* )classes
 {
@@ -51,19 +91,5 @@
     
     return computed;
 }
-
--( void )addStylesheetFromUrl:( NSURL* )url
-{
-    NSString* cssString = [NSString stringWithContentsOfURL: url
-                                                   encoding: NSUTF8StringEncoding
-                                                      error: nil];
-    
-    ESCssParser* parser = [[ESCssParser alloc] init];
-    NSDictionary* styleSheet = [parser parseText: cssString];
-    NSLog(@"styleSheet: %@", styleSheet);
-    [self addStylesheet: styleSheet];
-}
-
-
 
 @end
