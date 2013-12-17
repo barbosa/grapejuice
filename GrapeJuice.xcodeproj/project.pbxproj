@@ -11,7 +11,6 @@
 		12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E175185F73D5008D8471 /* UIViewController+GrapeJuice.m */; };
 		12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E178185F7948008D8471 /* GrapeJuiceViewController.m */; };
 		12A5E17D185F80DE008D8471 /* GJDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17C185F80DE008D8471 /* GJDivView.m */; };
-		12A5E180185F80EF008D8471 /* GJSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GJSpanView.m */; };
 		12A5E183185F8E97008D8471 /* GJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E182185F8E97008D8471 /* GJTextView.m */; };
 		12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E185185F97B7008D8471 /* GJBodyView.m */; };
 		1558AE54185F6A21001BB976 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1558AE53185F6A21001BB976 /* Foundation.framework */; };
@@ -33,6 +32,7 @@
 		1558AEC3185F8F25001BB976 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE91185F8F25001BB976 /* LICENSE */; };
 		1558AEC4185F8F25001BB976 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1558AE92185F8F25001BB976 /* README.md */; };
 		1558AEE5185F8F61001BB976 /* simple.css in Resources */ = {isa = PBXBuildFile; fileRef = 1558AEE4185F8F61001BB976 /* simple.css */; };
+		633E2BBE1860765600163A0D /* GJSpanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12A5E17F185F80EF008D8471 /* GJSpanView.m */; };
 		C29067C50F1A497380A5E6E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE8F12AA274E11AFE6D645 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -398,12 +398,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633E2BBE1860765600163A0D /* GJSpanView.m in Sources */,
 				12A5E183185F8E97008D8471 /* GJTextView.m in Sources */,
 				12A5E186185F97B7008D8471 /* GJBodyView.m in Sources */,
 				1558AEBF185F8F25001BB976 /* ESCssTokens.m in Sources */,
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
-				12A5E180185F80EF008D8471 /* GJSpanView.m in Sources */,
-				12A5E180185F80EF008D8471 /* GPSpanView.m in Sources */,
 				1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				12A5E179185F7948008D8471 /* GrapeJuiceViewController.m in Sources */,
