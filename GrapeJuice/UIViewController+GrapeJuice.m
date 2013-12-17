@@ -52,13 +52,20 @@
         }
         else
         {
-            Class mappedClass = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
-            if( mappedClass )
-            {
-                UIView* mappedView = [[mappedClass alloc] init];
-                [parent addSubview: mappedView];
-                [self loadViewFromElement: child withParent: mappedView];
+            Class className = nil;
+            NSString *customClassName = [child.attributes objectForKey:@"data-class"];
+            if (customClassName) {
+                className = NSClassFromString(customClassName);
             }
+            else {
+                className = ([UIViewController grapeJuiceClassesMap])[@(child.tag)];
+            }
+            if (!className) {
+                [NSException raise:@"Class not found" format:@"Class %@ not found", className];
+            }
+            UIView* currentView = [[className alloc] init];
+            [parent addSubview: currentView];
+            [self loadViewFromElement: child withParent: currentView];
         }
     }
 }
