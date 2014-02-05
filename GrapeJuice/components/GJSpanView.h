@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class GJLayout;
+
 @interface GJSpanView : UIView
+
+@property (nonatomic, strong) GJLayout* layout;
 
 @end
