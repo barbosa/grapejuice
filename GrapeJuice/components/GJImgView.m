@@ -22,6 +22,28 @@
 
 @implementation GJImgView
 
+-( id )initWithFrame:( CGRect )frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        self.clipsToBounds = YES;
+        self.contentMode = UIViewContentModeScaleToFill;
+    }
+    return self;
+}
+
+-( id )initWithCoder:( NSCoder* )aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        self.clipsToBounds = YES;
+        self.contentMode = UIViewContentModeScaleToFill;
+    }
+    return self;
+}
+
 -( void )consumesChildHtmlNode:( OGElement* )element
 {
     NSString *forcedWidth = element.attributes[@"width"];
@@ -54,14 +76,13 @@
                 placeholderImage: nil
                          success: ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                              weakSelf.image = image;
-                             [weakSelf layoutSubviews];
+                             [weakSelf setNeedsLayout];
                          } failure: nil];
 }
 
 -( void )loadLocalImageWithURL:( NSURL *)url
 {
     self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
-    [self layoutSubviews];
 }
 
 -( void )addSubview:( UIView* )view
