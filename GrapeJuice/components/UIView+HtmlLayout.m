@@ -18,6 +18,8 @@
 {
     CGFloat xCounter = 0.0f;
     CGFloat yCounter = 0.0f;
+    
+    BOOL isLastElementInline = NO;
     for( UIView* subview in self.subviews )
     {
         [subview layoutSubviews];
@@ -28,12 +30,29 @@
         {
             subviewFrame.origin.x = xCounter;
             xCounter += subviewFrame.size.width;
+            
+            if (isLastElementInline)
+            {
+                // if elemento nao cabe na tela, aumenta Y
+            }
+            else
+            {
+                subviewFrame.origin.y = yCounter;
+                yCounter += subviewFrame.size.height;
+            }
+            
+            isLastElementInline = YES;
         }
         
-        if ([[self class] htmlLayoutType] == HtmlLayoutTypeBlock)
+        if ([[subview class] htmlLayoutType] == HtmlLayoutTypeBlock)
         {
+            xCounter = 0.0;
+            subviewFrame.origin.x = xCounter;
+            
             subviewFrame.origin.y = yCounter;
             yCounter += subviewFrame.size.height;
+            
+            isLastElementInline = NO;
         }
 
         subview.frame = subviewFrame;

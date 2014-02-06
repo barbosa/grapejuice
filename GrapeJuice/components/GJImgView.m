@@ -76,7 +76,7 @@
                 placeholderImage: nil
                          success: ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
                              weakSelf.image = image;
-                             [weakSelf setNeedsLayout];
+                             [weakSelf.superview setNeedsDisplay];
                          } failure: nil];
 }
 
