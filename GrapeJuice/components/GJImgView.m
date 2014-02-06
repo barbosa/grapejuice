@@ -105,8 +105,8 @@
     CGRect myFrame = self.frame;
     myFrame.size = imageSize;
     self.frame = myFrame;
-    
-    NSLog(@"-----> %@", NSStringFromCGRect(myFrame));
 }
+
+
 
 @end

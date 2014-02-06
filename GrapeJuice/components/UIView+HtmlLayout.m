@@ -10,26 +10,41 @@
 
 // grapejuice
 #import "GJStyle.h"
+#import "GJImgView.h"
 
 @implementation UIView( HtmlLayout )
 
 -( void )layoutSubviewsInsideOut
 {
+    CGFloat xCounter = 0.0f;
     CGFloat yCounter = 0.0f;
     for( UIView* subview in self.subviews )
     {
         [subview layoutSubviews];
         
         CGRect subviewFrame =  subview.frame;
-        subviewFrame.origin.y = yCounter;
-        subview.frame = subviewFrame;
         
-        yCounter += subviewFrame.size.height;
+        if ([[subview class] htmlLayoutType] == HtmlLayoutTypeInline)
+        {
+            subviewFrame.origin.x = xCounter;
+            xCounter += subviewFrame.size.width;
+        }
+        
+        if ([[self class] htmlLayoutType] == HtmlLayoutTypeBlock)
+        {
+            subviewFrame.origin.y = yCounter;
+            yCounter += subviewFrame.size.height;
+        }
+
+        subview.frame = subviewFrame;
     }
     
     CGRect myFrame = self.frame;
     myFrame.size.height = yCounter;
-    myFrame.size.width = self.superview.frame.size.width;
+    
+    if ([[self class] htmlLayoutType] == HtmlLayoutTypeBlock)
+        myFrame.size.width = self.superview.frame.size.width;
+
     self.frame = myFrame;
 }
 
@@ -79,6 +94,11 @@
             CGContextStrokePath( context );
         }
     }
+}
+
++ (HtmlLayoutType)htmlLayoutType
+{
+    return HtmlLayoutTypeInline;
 }
 
 @end

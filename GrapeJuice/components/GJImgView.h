@@ -12,7 +12,7 @@
 
 @interface GJImgView : UIImageView
 
-@property (nonatomic, strong) GJLayout* layout;
+@property ( nonatomic, strong ) GJLayout* layout;
 
 -( void )consumesChildHtmlNode:( OGElement* )element;
 

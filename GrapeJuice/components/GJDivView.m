@@ -32,4 +32,9 @@
     [self layoutSubviewsInsideOut];
 }
 
++ (HtmlLayoutType)htmlLayoutType
+{
+    return HtmlLayoutTypeBlock;
+}
+
 @end
