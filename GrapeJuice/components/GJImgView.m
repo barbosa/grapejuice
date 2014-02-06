@@ -56,7 +56,7 @@
     if ([self isRemoteResource:src]) {
         [self loadRemoteImageWithURL:[NSURL URLWithString:src]];
     } else {
-        [self loadLocalImageWithURL:[[NSBundle mainBundle] URLForResource:[src stringByDeletingPathExtension]
+        [self loadLocalImageWithURL:[[NSBundle mainBundle] URLForResource:[[src lastPathComponent] stringByDeletingPathExtension]
                                                             withExtension:[src pathExtension]]];
     }
 }
@@ -105,6 +105,8 @@
     CGRect myFrame = self.frame;
     myFrame.size = imageSize;
     self.frame = myFrame;
+    
+    NSLog(@"-----> %@", NSStringFromCGRect(myFrame));
 }
 
 @end
