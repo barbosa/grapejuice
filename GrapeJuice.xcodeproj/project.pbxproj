@@ -44,6 +44,8 @@
 		63D6354718608A5600C0BECC /* GJButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 63D6354518608A5600C0BECC /* GJButtonView.m */; };
 		6A47FDA4186087140036749C /* CustomDivView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A47FDA3186087140036749C /* CustomDivView.m */; };
 		C29067C50F1A497380A5E6E9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AAE8F12AA274E11AFE6D645 /* libPods.a */; };
+		E410997E18A3079E00B48AF4 /* GJImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = E410997D18A3079E00B48AF4 /* GJImgView.m */; };
+		E410998018A308D500B48AF4 /* grapejuice.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E410997F18A308D500B48AF4 /* grapejuice.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,9 @@
 		6A47FDA2186087140036749C /* CustomDivView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDivView.h; sourceTree = "<group>"; };
 		6A47FDA3186087140036749C /* CustomDivView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDivView.m; sourceTree = "<group>"; };
 		B3BF6969A8B148BEBA74EAC2 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		E410997C18A3079E00B48AF4 /* GJImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GJImgView.h; sourceTree = "<group>"; };
+		E410997D18A3079E00B48AF4 /* GJImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GJImgView.m; sourceTree = "<group>"; };
+		E410997F18A308D500B48AF4 /* grapejuice.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grapejuice.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +154,7 @@
 		12A5E171185F6E5E008D8471 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				E410997F18A308D500B48AF4 /* grapejuice.jpg */,
 				12A5E1871860776E008D8471 /* no-css.html */,
 				12A5E172185F6E5E008D8471 /* simple.html */,
 				1558AEE4185F8F61001BB976 /* simple.css */,
@@ -177,6 +183,8 @@
 				12A5E182185F8E97008D8471 /* GJTextView.m */,
 				12A5E189186079E6008D8471 /* UIView+HtmlLayout.h */,
 				12A5E18A186079E6008D8471 /* UIView+HtmlLayout.m */,
+				E410997C18A3079E00B48AF4 /* GJImgView.h */,
+				E410997D18A3079E00B48AF4 /* GJImgView.m */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -390,6 +398,7 @@
 			files = (
 				1558AEE5185F8F61001BB976 /* simple.css in Resources */,
 				12A5E1881860776E008D8471 /* no-css.html in Resources */,
+				E410998018A308D500B48AF4 /* grapejuice.jpg in Resources */,
 				1558AEC4185F8F25001BB976 /* README.md in Resources */,
 				1558AE5E185F6A21001BB976 /* InfoPlist.strings in Resources */,
 				1558AE66185F6A21001BB976 /* Images.xcassets in Resources */,
@@ -458,6 +467,7 @@
 				12A5E176185F73D5008D8471 /* UIViewController+GrapeJuice.m in Sources */,
 				1593DCD91860AF9C00B28C2B /* UIColorUtils.m in Sources */,
 				1558AEBD185F8F25001BB976 /* ESCssParser.m in Sources */,
+				E410997E18A3079E00B48AF4 /* GJImgView.m in Sources */,
 				12A5E1911860AF9C008D8471 /* CallAlertButton.m in Sources */,
 				1558AE64185F6A21001BB976 /* AppDelegate.m in Sources */,
 				1558AEEF185FA4AB001BB976 /* GJStylesheet.m in Sources */,

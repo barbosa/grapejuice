@@ -17,6 +17,7 @@
 #import "GJLayout.h"
 #import "GJSpanView.h"
 #import "GJTextView.h"
+#import "GJImgView.h"
 #import "GJButtonView.h"
 #import "GJStylesheet.h"
 
@@ -119,6 +120,7 @@
             @(GUMBO_TAG_DIV): [GJDivView class],
             @(GUMBO_TAG_SPAN): [GJSpanView class],
             @(GUMBO_TAG_BUTTON): [GJButtonView class],
+            @(GUMBO_TAG_IMG): [GJImgView class]
         };
     }
     

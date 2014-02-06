@@ -16,7 +16,7 @@
 
 @interface GJSpanView ()
 
-@property( nonatomic, readwrite, strong )GJStyle* computedStyle;
+@property( nonatomic, readwrite, strong ) GJStyle* computedStyle;
 
 @end
 
