@@ -8,6 +8,8 @@
 
 #import "GJImgView.h"
 
+#import "UIImageView+AFNetworking.h"
+
 // grapejuice
 #import "UIView+HtmlLayout.h"
 #import "GJLayout.h"
@@ -15,26 +17,51 @@
 #import "GJStylesheet.h"
 
 @interface GJImgView ()
-@property ( nonatomic ) CGSize computedSize;
+@property ( nonatomic, readwrite ) CGSize computedSize;
 @end
 
 @implementation GJImgView
 
 -( void )consumesChildHtmlNode:( OGElement* )element
 {
-    NSString* src = element.attributes[@"src"];
-    NSURL* imageURL = [[NSBundle mainBundle] URLForResource:[src stringByDeletingPathExtension]
-                                              withExtension:[src pathExtension]];
-    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:imageURL]];
-    
-    CGSize newSize = self.image.size;
     NSString *forcedWidth = element.attributes[@"width"];
-    if (forcedWidth)
-        newSize.width = [forcedWidth intValue];
+    _computedSize.width = forcedWidth ? [forcedWidth intValue] : .0f;
+    
     NSString *forcedHeight = element.attributes[@"height"];
-    if (forcedHeight)
-        newSize.height = [forcedHeight intValue];
-    _computedSize = newSize;
+    _computedSize.height = forcedHeight ? [forcedHeight intValue] : .0f;
+    
+    NSString* src = element.attributes[@"src"];
+    if ([self isRemoteResource:src]) {
+        [self loadRemoteImageWithURL:[NSURL URLWithString:src]];
+    } else {
+        [self loadLocalImageWithURL:[[NSBundle mainBundle] URLForResource:[src stringByDeletingPathExtension]
+                                                            withExtension:[src pathExtension]]];
+    }
+}
+
+-( BOOL )isRemoteResource:(NSString* )src
+{
+    NSURL *url = [NSURL URLWithString:src];
+    return url && url.scheme && url.host;
+}
+
+-( void )loadRemoteImageWithURL:( NSURL* )url
+{
+    NSURLRequest* imageRequest = [NSURLRequest requestWithURL:url];
+    
+    __block typeof(self) weakSelf = self;
+    [self setImageWithURLRequest: imageRequest
+                placeholderImage: nil
+                         success: ^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+                             weakSelf.image = image;
+                             [weakSelf layoutSubviews];
+                         } failure: nil];
+}
+
+-( void )loadLocalImageWithURL:( NSURL *)url
+{
+    self.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:url]];
+    [self layoutSubviews];
 }
 
 -( void )addSubview:( UIView* )view
@@ -47,7 +74,10 @@
     GJStyle* style = [self.layout.stylesheet computedStyleForTag: self.layout.tag
                                                          classes: self.layout.classes];
     
-    CGSize imageSize = _computedSize;
+    CGFloat width = _computedSize.width > 0 ? _computedSize.width : self.image.size.width;
+    CGFloat height = _computedSize.height > 0 ? _computedSize.height: self.image.size.height;
+    
+    CGSize imageSize = CGSizeMake(width, height);
     imageSize.width += style.paddingLeft + style.paddingRight;
     imageSize.height += style.paddingTop + style.paddingBottom;
     
